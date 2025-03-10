@@ -197,8 +197,8 @@ def compute_information_gain(clf, X_train, y_train):
 def main():
     st.set_page_config(page_title="Species Extinction Risk", layout="wide")
     st.title("JEEVANTARANG ⧖")
-
-# GitHub username
+    st.markdown('<p style="font-size:16px;"><em>Guided by - Prof. Rajesh Gudapati</em></p>', unsafe_allow_html=True)
+    # GitHub username
 GITHUB_USERNAME = "your-github-username"
 
 # GitHub API URL to fetch user details
@@ -218,8 +218,6 @@ else:
 st.image(profile_image, width=100)  # Display profile picture
 st.markdown(f"### Created by [{profile_name}](https://github.com/{GITHUB_USERNAME})")
 st.write("---")  # Add a separator line to create some space
-    
-    st.markdown('<p style="font-size:16px;"><em>Guided by - Prof. Rajesh Gudapati</em></p>', unsafe_allow_html=True)
     
     caution_message = """
     <p style="font-size: 14px;">
