@@ -197,6 +197,27 @@ def compute_information_gain(clf, X_train, y_train):
 def main():
     st.set_page_config(page_title="Species Extinction Risk", layout="wide")
     st.title("JEEVANTARANG ⧖")
+
+# GitHub username
+GITHUB_USERNAME = "your-github-username"
+
+# GitHub API URL to fetch user details
+GITHUB_API_URL = f"https://api.github.com/users/{GITHUB_USERNAME}"
+
+# Fetch GitHub profile data
+response = requests.get(GITHUB_API_URL)
+if response.status_code == 200:
+    user_data = response.json()
+    profile_name = user_data["name"] if user_data["name"] else GITHUB_USERNAME
+    profile_image = user_data["avatar_url"]
+else:
+    profile_name = "GitHub User"
+    profile_image = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+
+# **Place this code in the main body of the app (not sidebar)**
+st.image(profile_image, width=100)  # Display profile picture
+st.markdown(f"### Created by [{profile_name}](https://github.com/{GITHUB_USERNAME})")
+st.write("---")  # Add a separator line to create some space
     
     st.markdown('<p style="font-size:16px;"><em>Guided by - Prof. Rajesh Gudapati</em></p>', unsafe_allow_html=True)
     
