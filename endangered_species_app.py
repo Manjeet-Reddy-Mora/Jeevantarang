@@ -20,7 +20,7 @@ from sklearn.tree import plot_tree
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import confusion_matrix, classification_report
-
+import requests
 
 
 # Load dataset from Excel file
@@ -613,6 +613,27 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+
+# GitHub username
+GITHUB_USERNAME = "Manjeet-Reddy-Mora"
+
+# GitHub API URL to fetch user details
+GITHUB_API_URL = f"https://api.github.com/users/{GITHUB_USERNAME}"
+
+# Fetch GitHub profile data
+response = requests.get(GITHUB_API_URL)
+if response.status_code == 200:
+    user_data = response.json()
+    profile_name = user_data["name"] if user_data["name"] else GITHUB_USERNAME
+    profile_image = user_data["avatar_url"]
+else:
+    profile_name = "GitHub User"
+    profile_image = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+
+# Display "Created by" section in Streamlit
+st.sidebar.markdown(f"### Created by [{profile_name}](https://github.com/{GITHUB_USERNAME})")
+st.sidebar.image(profile_image, width=100)
 
 
     
