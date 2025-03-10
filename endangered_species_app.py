@@ -633,7 +633,7 @@ st.sidebar.image(profile_image, width=100)
 
 
 # GitHub username
-GITHUB_USERNAME = "your-github-username"
+GITHUB_USERNAME = "Manjeet-Reddy-Mora"
 
 # GitHub API URL to fetch user details
 GITHUB_API_URL = f"https://api.github.com/users/{GITHUB_USERNAME}"
